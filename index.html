@@ -235,8 +235,8 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
 </div>
 
 <script>
-// 배포 시 FORM_ENDPOINT에 문의 접수 주소(예: 기존 페이지의 폼 API)를 넣으면 실제로 전송됩니다.
-const FORM_ENDPOINT = "";
+// 문의 접수 주소 (Google Apps Script 웹 앱 URL). 비어 있으면 접수되지 않습니다.
+const FORM_ENDPOINT = "https://script.google.com/a/macros/felz.me/s/AKfycbzYYtpm0y-h1Or1SMRZ-xPVrbhS0A5qwYQXFlCmglK4WfZu952MIl_KMFHTTCF_uEZHpg/exec";
 const form = document.getElementById("applyForm");
 const msg = document.getElementById("formMsg");
 function show(text, err){ msg.textContent = text; msg.className = "msg" + (err ? " err" : ""); msg.hidden = false; }
@@ -245,15 +245,18 @@ form.addEventListener("submit", async (e) => {
   const missing = [...form.querySelectorAll("[required]")].filter(el => el.type === "checkbox" ? !el.checked : !el.value.trim());
   if (missing.length){ show("필수 항목(*)을 모두 입력하고 개인정보 수집에 동의해 주세요.", true); missing[0].focus(); return; }
   const data = Object.fromEntries(new FormData(form));
-  data.page = location.pathname; data.submittedAt = new Date().toISOString();
-  if (!FORM_ENDPOINT){ show("미리보기 페이지라 실제로 접수되지는 않았어요. 배포 버전에서 접수됩니다."); return; }
-  const btn = document.getElementById("f-submit"); btn.disabled = true;
+  delete data.agree;
+  if (!FORM_ENDPOINT){ show("지금은 온라인 접수를 준비 중이에요. 잠시 후 다시 시도해 주세요.", true); return; }
+  const btn = document.getElementById("f-submit"); btn.disabled = true; btn.textContent = "보내는 중…";
   try{
-    const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data)});
-    if(!r.ok) throw new Error(r.status);
+    // text/plain으로 보내야 브라우저 사전 확인(CORS) 없이 Apps Script에 도착합니다.
+    const r = await fetch(FORM_ENDPOINT, {method:"POST", body: JSON.stringify(data)});
+    let ok = r.ok;
+    try { const j = await r.json(); ok = ok && j.ok !== false; } catch(_) {}
+    if(!ok) throw new Error("rejected");
     form.reset(); show("문의가 접수됐어요. 담당자가 확인 후 연락드릴게요.");
   }catch(err){ show("전송하지 못했어요. 잠시 후 다시 시도해 주세요.", true); }
-  finally{ btn.disabled = false; }
+  finally{ btn.disabled = false; btn.textContent = "참여 문의 보내기"; }
 });
 </script>
 
