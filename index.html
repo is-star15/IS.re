@@ -236,7 +236,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
 
 <script>
 // 문의 접수 주소 (Google Apps Script 웹 앱 URL). 비어 있으면 접수되지 않습니다.
-const FORM_ENDPOINT = "https://script.google.com/a/macros/felz.me/s/AKfycbzYYtpm0y-h1Or1SMRZ-xPVrbhS0A5qwYQXFlCmglK4WfZu952MIl_KMFHTTCF_uEZHpg/exec";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzYYtpm0y-h1Or1SMRZ-xPVrbhS0A5qwYQXFlCmglK4WfZu952MIl_KMFHTTCF_uEZHpg/exec";
 const form = document.getElementById("applyForm");
 const msg = document.getElementById("formMsg");
 function show(text, err){ msg.textContent = text; msg.className = "msg" + (err ? " err" : ""); msg.hidden = false; }
