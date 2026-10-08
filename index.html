@@ -71,7 +71,7 @@ p{margin:0}
 
 /* why */
 .why p+p{margin-top:14px}
-blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--wait);background:var(--surface);border-radius:0 8px 8px 0;font-size:15px}
+.key{margin:20px 0;padding:16px 20px;border-left:3px solid var(--accent);background:var(--frost);border-radius:0 8px 8px 0;font-size:17px;font-weight:700;line-height:1.6}
 
 /* steps */
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
@@ -132,7 +132,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
   <div class="hero">
     <div class="eyebrow">협력 동물병원 모집 · FIP 흉수·복수 검체 수집 연구</div>
     <h1>FIP PCR 결과를 기다리는 7일, 원내에서 확인할 수 있는 검사를 함께 만들어 가고 싶습니다.</h1>
-    <p class="sub">진료 중 이미 채취하신 흉수·복수의 남은 <span class="mono">3 mL</span>면 충분해요. <strong>아직 하지 않으신 FIP PCR 검사비는 연구팀에서 지원해 드리고</strong>, 회수와 운송도 저희가 맡으며, 적합 검체 1건당 협력비도 드립니다.</p>
+    <p class="sub">진료 중 이미 채취하신 흉수·복수의 남은 <span class="mono">3 mL</span>면 충분해요. <strong>아직 하지 않으신 FIP PCR 검사비는 연구팀에서 지원해 드리고</strong>, 포장만 해두시면 지정 업체가 수거해 가며, 적합 검체 1건당 협력비도 드립니다.</p>
     <div><a class="btn" href="#apply">참여 문의하기</a></div>
 
     <figure class="days" aria-label="천자 후 PCR 결과까지 약 7일 대기">
@@ -149,8 +149,8 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
     <div class="eyebrow">Why</div>
     <h2 id="why-h">왜 함께 만들고 싶은지</h2>
     <p>습식 FIP가 의심돼 천자까지 하셨는데, 외부기관 PCR 결과는 보통 일주일쯤 뒤에 나옵니다. 그 사이 항바이러스제 시작을 결정하기도, 보호자분께 설명드리기도 쉽지 않으셨을 거예요.</p>
-    <blockquote>"결과 나오면 말씀드릴게요."</blockquote>
-    <p>원내에서 바로 확인할 수 있는 진단제품은 실제 진료 현장의 검체가 있어야 만들 수 있습니다. 원장님 병원의 검체가 그 검사의 소중한 기준이 됩니다.</p>
+    <p class="key">원장님 병원의 남은 검체 3 mL가, 원내에서 FIP를 바로 확인하는 검사의 기준이 됩니다.</p>
+    <p>이런 진단제품은 실제 진료 현장의 검체가 있어야 만들 수 있어서, 협력병원과 함께 검체를 모으고 있습니다.</p>
   </section>
 
   <section aria-labelledby="steps-h">
@@ -159,7 +159,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
     <ol class="steps">
       <li><span class="num">01</span><div><h3>담아 주세요</h3><p>진단·치료 후 남은 흉수·복수 약 3 mL를 보내드린 크라이오바이알 2개에 나눠 담아 주세요.</p><div class="spec"><span class="chip">cryovial × 2</span><span class="chip">1.5 mL each</span></div></div></li>
       <li><span class="num">02</span><div><h3>냉동해 주세요</h3><p>-80℃가 가장 좋지만, 일반 냉동고(-20℃)도 괜찮습니다.</p><div class="spec"><span class="chip">−80℃ 권장</span><span class="chip">−20℃ 가능</span></div></div></li>
-      <li><span class="num">03</span><div><h3>연락 주세요</h3><p>연구팀이 드라이아이스를 챙겨 직접 회수하러 찾아뵙겠습니다.</p><div class="spec"><span class="chip">dry ice 회수</span></div></div></li>
+      <li><span class="num">03</span><div><h3>포장하고 연락 주세요</h3><p>보내드린 용기에 검체를 포장해 두시고 연락 주시면, 지정 업체가 병원으로 수거하러 갑니다.</p><div class="spec"><span class="chip">지정 업체 수거</span><span class="chip">배송비 연구팀 부담</span></div></div></li>
     </ol>
     <p class="note">용기, 라벨, 보호자 동의서 양식, 냉장고에 붙여두실 안내문까지 미리 보내드릴게요.</p>
   </section>
@@ -184,7 +184,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
     <div class="pr">
       <div><h3>추가 천자는 없어요</h3><p>연구를 위해 따로 채취하지 않고, 남은 분량만 사용합니다.</p></div>
       <div><h3>치료에 관여하지 않아요</h3><p>진단과 치료는 원장님 판단 그대로 진행하시면 됩니다.</p></div>
-      <div><h3>비용 부담도 없어요</h3><p>PCR 검사비 지원부터 회수·운송·비용 서류까지 연구팀이 챙기겠습니다.</p></div>
+      <div><h3>비용 부담도 없어요</h3><p>PCR 검사비 지원부터 수거·운송·비용 서류까지 연구팀이 챙기겠습니다.</p></div>
       <div><h3>지정기관에서 운영해요</h3><p>동물용의약품 시험실시기관으로 지정된 CRO 연구팀이 진행하며, 검체는 시료번호로 비식별화해 연구 목적으로만 사용합니다.</p></div>
     </div>
   </section>
@@ -192,7 +192,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
   <section aria-labelledby="faq-h">
     <div class="eyebrow">FAQ</div>
     <h2 id="faq-h">자주 묻는 질문</h2>
-    <details><summary>PCR을 아직 안 했는데 참여할 수 있을까요?</summary><p>네, 물론이에요. 검사비는 연구팀에서 지원해 드립니다. PCR을 의뢰해 주시고 검체는 먼저 냉동해 두시면, 양성이 확인된 뒤 회수하러 찾아뵐게요.</p></details>
+    <details><summary>PCR을 아직 안 했는데 참여할 수 있을까요?</summary><p>네, 물론이에요. 검사비는 연구팀에서 지원해 드립니다. PCR을 의뢰해 주시고 검체는 먼저 냉동해 두시면, 양성이 확인된 뒤 연락 주시면 수거해 가겠습니다.</p></details>
     <details><summary>이미 보관 중인 검체도 괜찮을까요?</summary><p>냉동으로 보관하셨고 PCR 양성이 확인된 검체라면 참여하실 수 있어요. 다만 오래 냉장했거나 상온에 둔 적이 있는 검체는 RNA가 분해됐을 수 있어 아쉽지만 받기 어렵습니다.</p></details>
     <details><summary>초저온 냉동고가 없는데 괜찮을까요?</summary><p>네, 일반 냉동고(-20℃)에 해동되지 않게만 보관해 주시면 충분합니다.</p></details>
     <details><summary>협력비는 어떻게 받나요?</summary><p>적합 검체 1건당 정해진 금액으로 지급해 드려요. 기준과 금액, 절차는 문의 주시면 안내해 드리겠습니다.</p></details>
@@ -201,7 +201,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;c
 
   <section id="apply" aria-labelledby="apply-h">
     <p class="closing">남은 검체 한 튜브가, 다음 고양이의 7일을 줄여줄 수 있습니다.</p>
-    <p class="muted">편하게 문의 남겨주시면 담당자가 협력비 기준, 동의서 양식, 회수 절차를 차근차근 안내해 드릴게요.</p>
+    <p class="muted">편하게 문의 남겨주시면 담당자가 협력비 기준, 동의서 양식, 수거 절차를 차근차근 안내해 드릴게요.</p>
     <h2 id="apply-h" style="margin-top:28px;margin-bottom:0">참여 문의하기</h2>
     <form id="applyForm" novalidate>
       <input type="hidden" id="f-source" name="source" value="fip-vet-b">
