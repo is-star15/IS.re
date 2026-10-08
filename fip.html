@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="FIP 의심 케이스의 남은 흉수·복수 3 mL로 원내 FIP 신속진단 검사 개발에 참여하세요. PCR 검사비 지원, 회수·운송 연구팀 전담, 협력비 지급.">
+<title>FIP 협력병원 모집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+html,body{margin:0}
+/* Layout: 한 줄 읽기 폭(≈680px) 단일 컬럼. 히어로에 'D0→D7 대기' 타임라인, 이후 절차·조건·FAQ·문의 폼 순 */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --ink:#13232A; --muted:#566871;
+  --line:#D6DFE2; --accent:#0B6B76; --accent-ink:#FFFFFF; --frost:#E3F0F2;
+  --wait:#B4562F;
+  --f-display:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F181C; --surface:#16232A; --ink:#E4ECEE; --muted:#97A9B0;
+  --line:#28383F; --accent:#5BC2CC; --accent-ink:#0B1A1E; --frost:#1B2E35; --wait:#E3916A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F181C; --surface:#16232A; --ink:#E4ECEE; --muted:#97A9B0;
+  --line:#28383F; --accent:#5BC2CC; --accent-ink:#0B1A1E; --frost:#1B2E35; --wait:#E3916A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px}
+section{padding-block:56px;border-top:1px solid var(--line)}
+h1,h2{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5.2vw,38px);line-height:1.38;letter-spacing:-.02em}
+h2{font-size:clamp(22px,4vw,28px);line-height:1.4;margin-bottom:20px}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.muted{color:var(--muted)}
+.mono{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;font-size:14px}
+.brand{font-weight:600;letter-spacing:-.01em}
+.top a{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* hero */
+.hero{padding-block:32px 48px;border-top:0;display:grid;gap:22px}
+.sub{font-size:17px;color:var(--muted);max-width:60ch}
+.sub strong{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:14px 22px;font:600 16px/1 var(--f-body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* day strip */
+.days{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 18px 14px}
+.days-cap{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);margin-bottom:12px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.d{height:30px;border-radius:4px;background:var(--frost);position:relative}
+.d.w{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--wait) 28%,transparent) 0 6px,transparent 6px 12px);border:1px solid color-mix(in srgb,var(--wait) 45%,transparent)}
+.d.s,.d.e{background:var(--accent)}
+.lbls{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px;font-family:var(--f-mono);font-size:11px;color:var(--muted);text-align:center}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend .a::before{background:var(--accent)}
+.legend .b::before{background:color-mix(in srgb,var(--wait) 40%,transparent)}
+
+/* banner */
+.banner{background:var(--frost);border-radius:12px;padding:20px;display:grid;gap:6px}
+.banner b{font-size:17px}
+.banner a{color:var(--accent);font-weight:600;text-decoration:none}
+
+/* why */
+.why p+p{margin-top:14px}
+.key{margin:20px 0;padding:16px 20px;border-left:3px solid var(--accent);background:var(--frost);border-radius:0 8px 8px 0;font-size:17px;font-weight:700;line-height:1.6}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.num{font-family:var(--f-mono);font-size:13px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;width:34px;height:34px;display:grid;place-items:center}
+.steps h3{margin:0 0 4px;font-size:17px}
+.steps p{color:var(--muted);font-size:15px}
+.spec{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{font-family:var(--f-mono);font-size:12px;padding:3px 8px;border-radius:4px;background:var(--frost);color:var(--ink)}
+.note{margin-top:16px;font-size:15px;color:var(--muted)}
+
+/* eligibility */
+.elig{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.elig li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:22px 1fr;gap:10px}
+.elig li::before{content:"✓";color:var(--accent);font-weight:600}
+.branch{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.branch div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:15px;min-width:0}
+.branch b{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-bottom:2px}
+
+/* principles */
+.pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 28px}
+.pr div{min-width:0}
+.pr h3{font-size:16px;margin:0 0 4px}
+.pr p{font-size:15px;color:var(--muted)}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-mono);color:var(--accent);font-weight:400}
+details[open] summary::after{content:"−"}
+details p{padding-bottom:16px;color:var(--muted);font-size:15px}
+
+/* apply */
+.closing{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,3.6vw,24px);line-height:1.5;text-wrap:balance;margin-bottom:10px}
+form{margin-top:24px;display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:grid;gap:6px;font-size:14px;font-weight:500;min-width:0}
+input,select,textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;width:100%}
+textarea{min-height:90px;resize:vertical}
+.req{color:var(--wait)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--muted)}
+.agree input{width:auto;margin-top:5px}
+.msg{font-size:14px;padding:12px 14px;border-radius:6px;background:var(--frost)}
+.msg.err{background:color-mix(in srgb,var(--wait) 15%,transparent)}
+footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.d.w{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.55}}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="brand">FIP 연구지원센터</span>
+    <a href="#apply">참여 문의</a>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">협력 동물병원 모집 · FIP 흉수·복수 검체 수집 연구</div>
+    <h1>FIP PCR 결과를 기다리는 7일, 원내에서 확인할 수 있는 검사를 함께 만들어 가고 싶습니다.</h1>
+    <p class="sub">진료 중 이미 채취하신 흉수·복수의 남은 <span class="mono">3 mL</span>면 충분해요. <strong>아직 하지 않으신 FIP PCR 검사비는 연구팀에서 지원해 드리고</strong>, 포장만 해두시면 지정 업체가 수거해 가며, 적합 검체 1건당 협력비도 드립니다.</p>
+    <div><a class="btn" href="#apply">참여 문의하기</a></div>
+
+    <figure class="days" aria-label="천자 후 PCR 결과까지 약 7일 대기">
+      <div class="days-cap"><span>지금: 천자 후 외부기관 PCR 결과까지</span><span class="mono">≈ 7 days</span></div>
+      <div class="strip" aria-hidden="true">
+        <div class="d s"></div><div class="d w"></div><div class="d w"></div><div class="d w"></div><div class="d w"></div><div class="d w"></div><div class="d w"></div><div class="d e"></div>
+      </div>
+      <div class="lbls" aria-hidden="true"><span>D0</span><span>D1</span><span>D2</span><span>D3</span><span>D4</span><span>D5</span><span>D6</span><span>D7</span></div>
+      <div class="legend"><span class="a">천자 · 결과 확인</span><span class="b">치료 결정과 보호자 설명이 미뤄지는 기간</span></div>
+    </figure>
+  </div>
+
+  <section class="why" aria-labelledby="why-h">
+    <div class="eyebrow">Why</div>
+    <h2 id="why-h">왜 함께 만들고 싶은지</h2>
+    <p>습식 FIP가 의심돼 천자까지 하셨는데, 외부기관 PCR 결과는 보통 일주일쯤 뒤에 나옵니다. 그 사이 항바이러스제 시작을 결정하기도, 보호자분께 설명드리기도 쉽지 않으셨을 거예요.</p>
+    <p class="key">원장님 병원의 남은 검체 3 mL가, 원내에서 FIP를 바로 확인하는 검사의 기준이 됩니다.</p>
+    <p>이런 진단제품은 실제 진료 현장의 검체가 있어야 만들 수 있어서, 협력병원과 함께 검체를 모으고 있습니다.</p>
+  </section>
+
+  <section aria-labelledby="steps-h">
+    <div class="eyebrow">Process</div>
+    <h2 id="steps-h">병원에서 해주실 일은 세 가지면 충분해요</h2>
+    <ol class="steps">
+      <li><span class="num">01</span><div><h3>담아 주세요</h3><p>진단·치료 후 남은 흉수·복수 약 3 mL를 보내드린 크라이오바이알 2개에 나눠 담아 주세요.</p><div class="spec"><span class="chip">cryovial × 2</span><span class="chip">1.5 mL each</span></div></div></li>
+      <li><span class="num">02</span><div><h3>냉동해 주세요</h3><p>-80℃가 가장 좋지만, 일반 냉동고(-20℃)도 괜찮습니다.</p><div class="spec"><span class="chip">−80℃ 권장</span><span class="chip">−20℃ 가능</span></div></div></li>
+      <li><span class="num">03</span><div><h3>포장하고 연락 주세요</h3><p>보내드린 용기에 검체를 포장해 두시고 연락 주시면, 지정 업체가 병원으로 수거하러 갑니다.</p><div class="spec"><span class="chip">지정 업체 수거</span><span class="chip">별도의 배송비 부담 없음</span></div></div></li>
+    </ol>
+    <p class="note">용기, 라벨, 보호자 동의서 양식, 냉장고에 붙여두실 안내문까지 미리 보내드릴게요.</p>
+  </section>
+
+  <section aria-labelledby="elig-h">
+    <div class="eyebrow">Eligibility</div>
+    <h2 id="elig-h">이런 케이스라면 함께하실 수 있어요</h2>
+    <ul class="elig">
+      <li><span>FIP가 의심되어 흉수 또는 복수를 채취한 고양이</span></li>
+      <li><div>FIP PCR 양성으로 확인된 경우
+        <div class="branch">
+          <div><b>이미 검사하셨다면</b>결과지만 공유해 주시면 돼요</div>
+          <div><b>아직이라면</b>PCR을 의뢰해 주세요. 검사비는 연구팀에서 지원해 드리고, 의뢰 방법도 안내해 드릴게요</div>
+        </div></div></li>
+      <li><span>GS-441524 등 치료제를 투약 중인 아이도 PCR 양성이라면 괜찮습니다</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="pr-h">
+    <div class="eyebrow">Your practice</div>
+    <h2 id="pr-h">진료는 지금 하시던 그대로예요</h2>
+    <div class="pr">
+      <div><h3>추가 천자는 없어요</h3><p>연구를 위해 따로 채취하지 않고, 남은 분량만 사용합니다.</p></div>
+      <div><h3>치료에 관여하지 않아요</h3><p>진단과 치료는 원장님 판단 그대로 진행하시면 됩니다.</p></div>
+      <div><h3>비용 부담도 없어요</h3><p>PCR 검사비 지원부터 수거·운송·비용 서류까지 연구팀이 챙기겠습니다.</p></div>
+      <div><h3>지정기관에서 운영해요</h3><p>동물용의약품 시험실시기관으로 지정된 CRO 연구팀이 진행하며, 검체는 시료번호로 비식별화해 연구 목적으로만 사용합니다.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-h">
+    <div class="eyebrow">FAQ</div>
+    <h2 id="faq-h">자주 묻는 질문</h2>
+    <details><summary>PCR을 아직 안 했는데 참여할 수 있을까요?</summary><p>네, 물론이에요. 검사비는 연구팀에서 지원해 드립니다. PCR을 의뢰해 주시고 검체는 먼저 냉동해 두시면, 양성이 확인된 뒤 연락 주시면 수거해 가겠습니다.</p></details>
+    <details><summary>이미 보관 중인 검체도 괜찮을까요?</summary><p>냉동으로 보관하셨고 PCR 양성이 확인된 검체라면 참여하실 수 있어요. 다만 오래 냉장했거나 상온에 둔 적이 있는 검체는 RNA가 분해됐을 수 있어 아쉽지만 받기 어렵습니다.</p></details>
+    <details><summary>초저온 냉동고가 없는데 괜찮을까요?</summary><p>네, 일반 냉동고(-20℃)에 해동되지 않게만 보관해 주시면 충분합니다.</p></details>
+    <details><summary>협력비는 어떻게 받나요?</summary><p>적합 검체 1건당 정해진 금액으로 지급해 드려요. 기준과 금액, 절차는 문의 주시면 안내해 드리겠습니다.</p></details>
+    <details><summary>용기가 도착하기 전에 케이스가 생기면요?</summary><p>병원에 있는 튜브에 담아 냉장 보관해 두시고 바로 연락 주세요. 물품을 서둘러 보내드릴게요.</p></details>
+  </section>
+
+  <section id="apply" aria-labelledby="apply-h">
+    <p class="closing">남은 검체 한 튜브가, 다음 고양이의 7일을 줄여줄 수 있습니다.</p>
+    <p class="muted">편하게 문의 남겨주시면 담당자가 협력비 기준, 동의서 양식, 수거 절차를 차근차근 안내해 드릴게요.</p>
+    <h2 id="apply-h" style="margin-top:28px;margin-bottom:0">참여 문의하기</h2>
+    <form id="applyForm" novalidate>
+      <input type="hidden" id="f-source" name="source" value="fip-vet-b">
+      <div class="row">
+        <label for="f-hospital">병원명 <span class="req">*</span><input id="f-hospital" name="hospital" required autocomplete="organization"></label>
+        <label for="f-name">담당 수의사 성함 <span class="req">*</span><input id="f-name" name="name" required autocomplete="name"></label>
+      </div>
+      <div class="row">
+        <label for="f-phone">연락처 <span class="req">*</span><input id="f-phone" name="phone" type="tel" required inputmode="tel" placeholder="010-0000-0000" autocomplete="tel"></label>
+        <label for="f-region">지역<input id="f-region" name="region" placeholder="예: 서울 광진구"></label>
+      </div>
+      <label for="f-status">현재 상황
+        <select id="f-status" name="status">
+          <option value="stored">PCR 양성 검체를 냉동 보관 중이에요</option>
+          <option value="pcr_pending">FIP 의심 케이스가 있어 PCR 의뢰 예정이에요</option>
+          <option value="future">케이스가 생기면 참여하고 싶어요</option>
+          <option value="question">먼저 협력비·절차를 듣고 싶어요</option>
+        </select>
+      </label>
+      <label for="f-memo">문의 내용<textarea id="f-memo" name="memo" placeholder="궁금하신 점을 자유롭게 남겨주세요"></textarea></label>
+      <label class="agree" for="f-agree"><input id="f-agree" name="agree" type="checkbox" required><span>문의 응대를 위한 개인정보(병원명, 성함, 연락처) 수집·이용에 동의합니다. <span class="req">*</span></span></label>
+      <div id="formMsg" class="msg" role="status" hidden></div>
+      <button class="btn" type="submit" id="f-submit">참여 문의 보내기</button>
+    </form>
+  </section>
+
+  <footer>
+    FIP01-FEL-501 · 고양이 전염성 복막염(FIP) 흉수·복수 검체 수집 연구<br>
+    운영: 주식회사 펠즈(FELZ Inc.) · 동물용의약품 시험실시기관 지정 CRO
+  </footer>
+</div>
+
+<script>
+// 문의 접수 주소 (Google Apps Script 웹 앱 URL). 비어 있으면 접수되지 않습니다.
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzYYtpm0y-h1Or1SMRZ-xPVrbhS0A5qwYQXFlCmglK4WfZu952MIl_KMFHTTCF_uEZHpg/exec";
+const form = document.getElementById("applyForm");
+const msg = document.getElementById("formMsg");
+function show(text, err){ msg.textContent = text; msg.className = "msg" + (err ? " err" : ""); msg.hidden = false; }
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const missing = [...form.querySelectorAll("[required]")].filter(el => el.type === "checkbox" ? !el.checked : !el.value.trim());
+  if (missing.length){ show("필수 항목(*)을 모두 입력하고 개인정보 수집에 동의해 주세요.", true); missing[0].focus(); return; }
+  const data = Object.fromEntries(new FormData(form));
+  delete data.agree;
+  if (!FORM_ENDPOINT){ show("지금은 온라인 접수를 준비 중이에요. 잠시 후 다시 시도해 주세요.", true); return; }
+  const btn = document.getElementById("f-submit"); btn.disabled = true; btn.textContent = "보내는 중…";
+  try{
+    // text/plain으로 보내야 브라우저 사전 확인(CORS) 없이 Apps Script에 도착합니다.
+    const r = await fetch(FORM_ENDPOINT, {method:"POST", body: JSON.stringify(data)});
+    let ok = r.ok;
+    try { const j = await r.json(); ok = ok && j.ok !== false; } catch(_) {}
+    if(!ok) throw new Error("rejected");
+    form.reset(); show("문의가 접수됐어요. 담당자가 확인 후 연락드릴게요.");
+  }catch(err){ show("전송하지 못했어요. 잠시 후 다시 시도해 주세요.", true); }
+  finally{ btn.disabled = false; btn.textContent = "참여 문의 보내기"; }
+});
+</script>
+
+</body>
+</html>
